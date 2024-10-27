@@ -1,0 +1,36 @@
+@import "reset.css";
+@import "reveal.css";
+@import "theme/dracula.css";
+@import "reveal.js/plugin/highlight/monokai.css";
+
+.space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.vertical-center {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+}
+
+.grayscale {
+    filter: grayscale(1);
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+/* Override theme's max-height */
+.reveal section pre code {
+    max-height: 100%;
+    width: 40em;
+}
+
+.reveal section pre code.error {
+    background: #aa2233;
+}
+
+.reveal section pre {
+    width: fit-content;
+}

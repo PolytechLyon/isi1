@@ -1,0 +1,19 @@
+{
+  "name": "isi1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "Ahmad SHAHWAN",
+  "license": "ISC",
+  "description": "Ingénierie des Systèmes d'Information I",
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "reveal.js": "^5.1.0"
+  }
+}
