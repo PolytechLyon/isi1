@@ -37,14 +37,21 @@ console.log(msg);
 * Opérateur de chaînage optionnel
 
 ```javascript
-const person1 = { name: 'John' };
+const person1 = {
+    name: 'John',
+    print() { console.log(this.name); }
+};
 const person2 = null;
+const person3 = { name: 'John' };
 console.log(person1?.name);     // John
-console.log(person2?.name)      // undefined
+console.log(person2?.name);     // undefined
+person1.print?.();              // John
+person3.print?.();              // udefined
 ```
 
 ```javascript error
 console.log(person2.name);      // TypeError
+person3.print()                 // TypeError
 ```
 </div>
 
