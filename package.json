@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "vite",
+    "preview": "vite preview",
     "build": "vite build"
   },
   "keywords": [],
