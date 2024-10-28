@@ -1,6 +1,6 @@
-@import "reset.css";
-@import "reveal.css";
-@import "theme/dracula.css";
+@import "reveal.js/dist/reset.css";
+@import "reveal.js/dist/reveal.css";
+@import "reveal.js/dist/theme/dracula.css";
 @import "reveal.js/plugin/highlight/monokai.css";
 
 .reveal h1 {
