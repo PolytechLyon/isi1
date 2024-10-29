@@ -3,10 +3,6 @@
 @import "reveal.js/dist/theme/dracula.css";
 @import "reveal.js/plugin/highlight/monokai.css";
 
-.reveal h1 {
-    font-size: 2.2em;
-}
-
 .space-around {
     display: flex;
     justify-content: space-around;
