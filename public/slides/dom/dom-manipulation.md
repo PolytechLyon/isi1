@@ -9,8 +9,7 @@
   <body>
     <h1 class="focus">Le modèle objet de document</h1>
     <main id="course">
-      <span class="focus">Le</span> DOM est
-      une réprésentation <em>arborescente</em>.
+      Le <span class="focus">DOM</span> est un <em>arbre</em>.
     </main>
   </body>
 </html>

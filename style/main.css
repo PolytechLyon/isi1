@@ -31,6 +31,11 @@
     width: 40em;
 }
 
+.reveal section pre code.no-min-width {
+    max-height: 100%;
+    min-width: 0;
+}
+
 .reveal section pre code.error {
     background: #aa2233;
 }
