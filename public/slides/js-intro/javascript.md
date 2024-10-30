@@ -1,4 +1,4 @@
-## JavaScript
+## **JavaScript**
 * Langage haut niveau
 * Interprété
 * Typage faible et dynamique
