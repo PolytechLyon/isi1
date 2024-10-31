@@ -1,5 +1,5 @@
-### DOM
-## Example
+#### DOM
+### Démo
 
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="3">
@@ -11,7 +11,7 @@
     data-line-numbers="[|1, 4, 13, 16]"
     data-fragment-index="1">
 const body = document.querySelector('body');
-function onMouseClick(event) {
+function pop(event) {
     const x = event.x, y = event.y;
     const button = document.createElement('button');
     button.innerText = 'X';
@@ -25,7 +25,7 @@ function onMouseClick(event) {
     body.append(button);
 }
 
-document.addEventListener('click', onMouseClick);
+document.addEventListener('click', pop);
 </code>
 </pre>
 

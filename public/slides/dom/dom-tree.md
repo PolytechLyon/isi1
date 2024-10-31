@@ -1,5 +1,5 @@
-### DOM
-## Arborescence
+#### DOM
+### Arborescence
 
 <div style="display: flex; justify-content: space-between">
 
