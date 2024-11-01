@@ -17,7 +17,6 @@ function pop(event) {
     const x = event.x, y = event.y;
     const button = document.createElement('button');
     button.innerText = 'X';
-    button.style.position = 'absolute';
     button.style.left = `${x}px`;
     button.style.top = `${y}px`;
     button.addEventListener('click', event => {
@@ -31,6 +30,10 @@ function pop(event) {
 
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="3">
+
+```css
+button { position: absolute; }
+```
 
 ```html [8-10]
 <!DOCTYPE html>
