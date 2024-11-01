@@ -43,3 +43,7 @@
 .reveal section pre {
     width: fit-content;
 }
+
+.reveal section .fragment.visible .deferred {
+    transition-delay: 1s;
+}
