@@ -6,7 +6,7 @@
     console.log(new Date().getHours() < 12 ? 'AM' : 'PM');
   > PM
   ```
-* Aussi par d'autres moteurs JavaScript (Node.js, ect.)
+* Aussi par d'autres moteurs JS (Node.js, ect.)
 * **Pas de phase de compilation**
 
 

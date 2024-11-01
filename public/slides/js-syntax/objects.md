@@ -5,7 +5,7 @@
 
 <div class="fragment fade-out" data-fragment-index="1">
 
-* Un objet est une collection des variables (données) et fonctions (traitement), appelées membres
+* Un objet est une collection des variables (données) et fonctions (traitements), appelées membres
   * Les variables sont appelées propriétés
   * Les fonctions sont appelées méthodes
 
@@ -45,7 +45,7 @@ const person = {
 
 <div class="fragment fade-in-then-out" >
 
-* Les clés (noms des membres) peuvent être dynamiques : syntaxe entre crochet `[]`
+* Les clés (noms des membres) peuvent être dynamiques : syntaxe entre crochets `[]`
 
 ```javascript [5,6]
 const lang = 'fr';
@@ -64,9 +64,9 @@ const person = {
 <div class="fragment" >
 
 * Accès aux members avec un point : nom static
-* Ou avec crochet : nom dynamique
+* Ou avec crochets : nom dynamique
 
-```javascript [5,6]
+```javascript [7-10]
 const person = {
   name: 'John',
   greet() {

@@ -5,7 +5,7 @@
 
 <div class="fragment fade-out" data-fragment-index="1">
 
-* Avec le mot clé `function`
+* Déclaration avec le mot clé `function`
 
 ```javascript
 function f() {
@@ -46,15 +46,14 @@ const sum = f(1, 2);        // appel et affectation
 
 <div class="fragment fade-in-then-out" data-fragment-index="3">
 
-* La fonction est un objet de première classe en JavaScript
-* Elle peut être déclarée avec une expression, et affectée à une variable
+* Une fonction peut être déclarée avec une expression, et affectée à une variable
 
 ```javascript
 const f = function(a, b) {
     return a + b;
 }
 
-const sum = f(1, 2);        // appel et affectation
+const sum = f(1, 2);        // appel (invocation)
 ```
 
 </div>

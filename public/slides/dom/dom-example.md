@@ -8,9 +8,11 @@
     class="javascript language-javascript"
     data-trim
     data-noescape
-    data-line-numbers="[|1, 4, 13, 16]"
+    data-line-numbers="[|1, 6, 11, 15, 20]"
     data-fragment-index="1">
 const body = document.querySelector('body');
+document.addEventListener('click', pop);
+
 function pop(event) {
     const x = event.x, y = event.y;
     const button = document.createElement('button');
@@ -24,13 +26,28 @@ function pop(event) {
     })
     body.append(button);
 }
-
-document.addEventListener('click', pop);
 </code>
 </pre>
 
 </div>
-<div class="fragment" data-fragment-index="3">
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+
+```html [8-10]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buttons</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+</div>
+<div class="fragment">
 Result
 
 <div>

@@ -124,7 +124,7 @@ console.log(x);     // 45
 
 </div>
 
-<div class="fragment fade-in-then-out" >
+<div class="fragment" >
 
 * `break` et `continue` dans une boucle 
 
@@ -142,23 +142,6 @@ for (let res in reservations) {
         break;
     }
 }
-```
-
-</div>
-
-
-
-<div class="fragment">
-
-* Les chaînes caractères sont immutables
-* Différents opérations et opérateurs possibles
-
-```javascript
-const str = 'Hello World';
-str + '!';                  // Hello Word!
-str.length;                 // 11
-str[4];                     // o
-str.split(' ')              // ['Hello', 'World']
 ```
 
 </div>

@@ -1,5 +1,7 @@
 ## Plan des cours
-* Introduction au développement Web
+* Introduction au développement front-end
   * HTML, CSS, Javascript
-* Page Web dynamique
-* Single Page Application
+* JavaScript : langage est syntaxe
+* Le Modèle Objet de Document
+* Vue.js
+  * Applications web monopages

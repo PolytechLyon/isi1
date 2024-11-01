@@ -21,8 +21,10 @@
 
 <div class="fragment fade-in-then-out" data-fragment-index="1">
 
-* Elles *capturent* l'autoréférence `this` de là où elles étaient déclarées `this` figé à la déclaration
-* Le `this` des fonctions classiques dépend du contexte `this` dynamique lors de l'appel
+* Elles *capturent* l'autoréférence this` de là où elles étaient déclarées
+  * `this` figé à la déclaration
+* Le `this` des fonctions classiques dépend du contexte
+  * `this` dynamique lors de l'appel
 
 </div>
 

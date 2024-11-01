@@ -47,7 +47,7 @@ var obj = {taille: x++};    // Déclaration est initialisation
   ```javascript
   let i = 42;
   for (let i = 0; i < 3; i++);
-  console.log(i);                 // 24
+  console.log(i);                 // 42
   ```
 * ~`var`~ a une portée de fonction ou globale
   ```javascript

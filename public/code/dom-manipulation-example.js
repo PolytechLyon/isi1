@@ -1,4 +1,5 @@
 const body = document.querySelector('body');
+document.addEventListener('click', pop);
 
 function pop(event) {
     const x = event.x, y = event.y;
@@ -13,5 +14,3 @@ function pop(event) {
     })
     body.append(button);
 }
-
-document.addEventListener('click', pop);
