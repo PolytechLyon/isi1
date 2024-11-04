@@ -51,7 +51,7 @@ app.mount('#app');
 Result
 
 <div>
-<iframe style="min-height: 400px; min-width: 600px" src="../../code/vue-in-browser-example.html"></iframe>
+<iframe style="min-height: 400px; min-width: 600px" src="code/vue-in-browser-example.html"></iframe>
 </div>
 
 </div>

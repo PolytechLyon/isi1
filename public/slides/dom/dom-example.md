@@ -54,7 +54,7 @@ button { position: absolute; }
 Result
 
 <div>
-<iframe style="min-height: 400px; min-width: 600px" src="../../code/dom-manipulation-example.html"></iframe>
+<iframe style="min-height: 400px; min-width: 600px" src="code/dom-manipulation-example.html"></iframe>
 </div>
 
 </div>
