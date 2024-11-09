@@ -1,5 +1,5 @@
 const AppButton = {
-    template: '<button :style="position" @click.prevent="$event.target.remove()">X</button>',
+    template: '<button :style="position" @click.stop="$event.target.remove()">X</button>',
     props: ['position'],
 }
 

@@ -16,7 +16,7 @@
   <div id="app">
     <button v-for="position in positions"
       :style="position"
-      @click.prevent="$event.target.remove()">X</button>
+      @click.stop="$event.target.remove()">X</button>
   </div>
   <script src="https://unpkg.com/vue@3"></script>
   <script src="script.js"></script>
