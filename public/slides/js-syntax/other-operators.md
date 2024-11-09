@@ -49,7 +49,7 @@ person1.print?.();              // John
 person3.print?.();              // udefined
 ```
 
-```javascript fix error
+``` fix error
 console.log(person2.name);      // TypeError
 person3.print()                 // TypeError
 ```

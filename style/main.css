@@ -37,7 +37,8 @@
 }
 
 .reveal section pre code.error {
-    background: #aa2233;
+    background: #d300381a;
+    color: darkgray;
 }
 
 .reveal section pre {
