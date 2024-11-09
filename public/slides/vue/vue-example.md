@@ -14,12 +14,12 @@
 ```html fix
 <body>
   <div id="app">
-  <button v-for="position in positions"
-    :style="position"
-    @click="remove($event)">X</button>
+    <button v-for="position in positions"
+      :style="position"
+      @click.prevent="$event.target.remove()">X</button>
   </div>
   <script src="https://unpkg.com/vue@3"></script>
-  <script src="vue-in-browser-example.js"></script>
+  <script src="script.js"></script>
 </body>
 ```
 
@@ -31,15 +31,11 @@
 const app = Vue.createApp({
   setup() {
     const positions = Vue.ref([]);
-    function pop(event) {
-      positions.value.push({left: `${event.x}px`, top: `${event.y}px`});
-    }
-    function remove(event) {
-      event.target.remove();
-      event.stopPropagation();
+    function pop({x, y}) {
+      positions.value.push({ left: `${x}px`, top: `${y}px` });
     }
     document.addEventListener('click', pop);
-    return { positions, remove };
+    return { positions };
   }
 });
 app.mount('#app');
@@ -51,7 +47,7 @@ app.mount('#app');
 Result
 
 <div>
-<iframe style="min-height: 400px; min-width: 600px" src="code/vue-in-browser-example.html"></iframe>
+<iframe style="min-height: 400px; min-width: 600px" src="code/vue-in-browser/index.html"></iframe>
 </div>
 
 </div>

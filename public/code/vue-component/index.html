@@ -1,0 +1,22 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VueJS Components</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div id="app">
+    <app-button v-for="position in positions" :position="position">X</app-button>
+  </div>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
