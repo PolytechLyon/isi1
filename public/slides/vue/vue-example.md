@@ -44,7 +44,7 @@ app.mount('#app');
 </div>
 
 <div class="fragment" data-fragment-index="3">
-Result
+Résultat
 
 <div data-code-example="vue-in-browser" data-code-example-size="big"></div>
 

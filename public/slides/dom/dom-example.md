@@ -51,7 +51,7 @@ button { position: absolute; }
 
 </div>
 <div class="fragment">
-Result
+Résultat
 
 <div data-code-example="dom-manipulation-example" data-code-example-size="big"></div>
 
