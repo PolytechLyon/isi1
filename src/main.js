@@ -24,13 +24,11 @@ function createCodeIcons(example, height, width) {
 }
 
 function createCopyIcon() {
-    return `
-        <img
-            src="images/copy.svg"
-            alt="copier"
-            class="icon"
-            onclick="navigator.clipboard.writeText(event.target.parentElement.innerText).then()"/>
-    `;
+    return `<img
+                src="images/copy.svg"
+                alt="copier"
+                class="icon"
+                onclick="navigator.clipboard.writeText(event.target.parentElement.innerText).then()"/>`;
 }
 
 Reveal.initialize({
