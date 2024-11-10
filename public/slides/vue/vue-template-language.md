@@ -34,7 +34,7 @@
 
 ```html
   <div id="app">
-    <img :src="image" />
+    <progress :value="progress"></progress>
   </div>
 ```
 

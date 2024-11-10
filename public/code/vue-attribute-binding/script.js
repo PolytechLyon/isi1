@@ -1,10 +1,8 @@
 Vue.createApp({
     setup() {
-        const image = Vue.ref('');
-        const images = ['CSS3_logo', 'HTML5_logo', 'JavaScript_logo'];
-        let i = 0;
-        setInterval(() => image.value = `/images/${images[i++ % images.length]}.svg`, 1000);
-        return { image };
+        const progress = Vue.ref(0);
+        setInterval(() => progress.value = (progress.value + .1) % 1, 1000);
+        return { progress };
     }
 })
 .mount('#app');
