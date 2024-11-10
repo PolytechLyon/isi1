@@ -48,3 +48,22 @@
 .reveal section .fragment.visible .deferred {
     transition-delay: 1s;
 }
+
+.reveal section [data-code-example] {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    .icons {
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        line-height: 0;
+        top: 0;
+        right: 8px;
+
+        img {
+            width: 15px;
+            margin: 8px;
+        }
+    }
+}

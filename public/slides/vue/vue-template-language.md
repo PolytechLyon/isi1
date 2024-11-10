@@ -21,10 +21,7 @@
   </div>
 ```
 
-<div>
-    <iframe style="min-height: 25px; min-width: 100px" src="code/vue-moustache/index.html"></iframe>
-</div>
-
+<div data-code-example="vue-moustache"></div>
 
 </div>
 
@@ -38,10 +35,7 @@
   </div>
 ```
 
-<div>
-    <iframe style="min-height: 25px; min-width: 100px" src="code/vue-attribute-binding/index.html"></iframe>
-</div>
-
+<div data-code-example="vue-attribute-binding"></div>
 
 </div>
 
@@ -55,10 +49,7 @@
   </div>
 ```
 
-<div>
-    <iframe style="min-height: 25px; min-width: 100px" src="code/vue-event-binding/index.html"></iframe>
-</div>
-
+<div data-code-example="vue-event-binding"></div>
 
 </div>
 
@@ -74,10 +65,7 @@
   </div>
 ```
 
-<div>
-    <iframe style="min-height: 25px; min-width: 100px" src="code/vue-if-else/index.html"></iframe>
-</div>
-
+<div data-code-example="vue-if-else"></div>
 
 </div>
 
@@ -96,14 +84,9 @@
   </div>
 ```
 
-<div>
-    <iframe style="min-height: 25px; min-width: 100px" src="code/vue-for/index.html"></iframe>
-</div>
-
+<div data-code-example="vue-for"></div>
 
 </div>
-
-
 
 </div>
 
