@@ -23,12 +23,21 @@ function createCodeIcons(example, height, width) {
     `;
 }
 
+function createCopyIcon() {
+    return `
+        <img
+            src="images/copy.svg"
+            alt="copier"
+            class="icon"
+            onclick="navigator.clipboard.writeText(event.target.parentElement.innerText).then()"/>
+    `;
+}
+
 Reveal.initialize({
     hash: true,
     plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
     navigationMode: 'linear',
 }).then(() => {
-    console.log('On document load');
     document.querySelectorAll('.reveal section [data-code-example]').forEach(codeExampleElement => {
         const example = codeExampleElement.getAttribute('data-code-example');
         if (!example) return;
@@ -37,5 +46,10 @@ Reveal.initialize({
         const width = size === 'big' ? 600 : 100;
         codeExampleElement.innerHTML += createCodeIcons(example, height, width);
     });
+
+    document.querySelectorAll('.reveal section pre code').forEach(codeSnippetElement => {
+        codeSnippetElement.innerHTML += createCopyIcon();
+    });
+
     Reveal.sync();
 });

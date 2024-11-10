@@ -21,7 +21,7 @@ isNaN(0 / 0);           // true
 
 * Le type BigInt peut être utilisé pour les grands entiers
 
-```javascript
+```javascript fix
 const x = BigInt(Number.MAX_SAFE_INTEGER) + 1n;
 x;                  // 9007199254740992n
 typeof x;           // bigint
@@ -32,12 +32,12 @@ typeof x;           // bigint
 <div class="fragment">
 
 * Opérateurs arithmétiques : `+`, `-`, `*`, `/`, `**`, etc.
-  ```javascript
+  ```javascript fix
   const divisionReelle = 3 / 2;         // 1.5
   const exponentiation = 2 ** 3;        // 8
   ```
 * Affectation : `++`, `--`, `+=`, `-=`, `*=`, `/=`, `**=`, etc.
-  ```javascript
+  ```javascript fix
   let x = 1;
   ++x;                                  // 2
   ```

@@ -7,7 +7,7 @@
 
 * Test d'égalité de valeur avec `==`
 * Test d'égalité stricte (valeur et type) avec `===`
-```javascript
+```javascript fix
 console.log(42 == '42');           // true 
 console.log(42 === '42');          // false
 console.log(42 === 42);            // true
@@ -24,7 +24,7 @@ console.log('' === false);         // false
 
 * Test d'inégalité de valeur avec `!=`
 * Test d'inégalité stricte (valeur ou type) avec `!==`
-```javascript
+```javascript fix
 console.log(42 != '42');           // false 
 console.log(42 !== '42');          // ture
 console.log(42 !== 42);            // false
@@ -42,7 +42,7 @@ console.log('' !== false);         // true
 * Comparaison d'inégalité `<`, `>`, `<=`, `>=`
 * Entre deux chiffres ou deux chaînes de caractères
 
-```javascript
+```javascript fix
 console.log(42 > 13);                    // true 
 console.log(42 >= '42');                 // true
 console.log(42 > NaN);                   // false
