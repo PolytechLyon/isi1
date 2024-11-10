@@ -1,17 +1,20 @@
 const AppButton = {
-    template: '<button :style="position" @click.stop="$event.target.remove()">X</button>',
+    template: `<button :style="position" @click.stop="remove">X</button>`,
     props: ['position'],
+    setup() {
+        return {
+            remove: e => e.target.remove()
+        };
+    }
 }
 
 Vue.createApp({
     setup() {
         const positions = Vue.ref([]);
-        function pop(event) {
-            positions.value.push({ left: `${event.x}px`, top: `${event.y}px` });
-        }
-        document.addEventListener('click', pop);
+        document.addEventListener('click', ({x, y}) =>
+            positions.value.push({ left: `${x}px`, top: `${y}px` }));
         return { positions };
     }
 })
-.component('AppButton', AppButton)
+.component('app-button', AppButton)
 .mount('#app');
