@@ -61,16 +61,16 @@ const sum = f(1, 2);        // appel (invocation)
 
 * La déclaration est hissée en haut de la portée
 
-```javascript
+```javascript fix
 const sum = f(1, 2);        // appel avant la déclaration possible
 function f(a, b) {
     return a + b;
 }
 ```
 
-* Mais pas l'expression de fonction
+* Ce n'est pas le cas pour l'expression de fonction
 
-```javascript
+```javascript fix
 const f = function(a, b) {
     return a + b;
 }
