@@ -5,6 +5,6 @@ import RevealNotes from 'reveal.js/plugin/notes/notes';
 
 Reveal.initialize({
     hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+    navigationMode: 'linear',
 });
