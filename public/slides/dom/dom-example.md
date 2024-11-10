@@ -53,9 +53,7 @@ button { position: absolute; }
 <div class="fragment">
 Result
 
-<div>
-<iframe style="min-height: 400px; min-width: 600px" src="code/dom-manipulation-example.html"></iframe>
-</div>
+<div data-code-example="dom-manipulation-example" data-code-example-size="big"></div>
 
 </div>
 

@@ -46,9 +46,7 @@ app.mount('#app');
 <div class="fragment" data-fragment-index="3">
 Result
 
-<div>
-<iframe style="min-height: 400px; min-width: 600px" src="code/vue-in-browser/index.html"></iframe>
-</div>
+<div data-code-example="vue-in-browser" data-code-example-size="big"></div>
 
 </div>
 
