@@ -5,7 +5,7 @@ import RevealNotes from 'reveal.js/plugin/notes/notes';
 
 function createCodeIcons(example, height, width) {
     return `
-        <iframe style="min-height: ${height}px; min-width: ${width}px" src="code/${example}/index.html"></iframe>
+        <iframe style="height: ${height}px; width: ${width}px" src="code/${example}/index.html"></iframe>
         <div class="icons">
             <a
                 href='https://github.com/PolytechLyon/isi1/tree/master/public/code/${example}'
@@ -40,8 +40,8 @@ Reveal.initialize({
         const example = codeExampleElement.getAttribute('data-code-example');
         if (!example) return;
         const size = codeExampleElement.getAttribute('data-code-example-size');
-        const height = size === 'big' ? 400 : 25;
-        const width = size === 'big' ? 600 : 100;
+        const height = size === 'big' ? 400 : 100;
+        const width = size === 'big' ? 600 : 200;
         codeExampleElement.innerHTML += createCodeIcons(example, height, width);
     });
 
