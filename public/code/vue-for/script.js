@@ -1,3 +1,3 @@
-Vue.createApp({
-})
-.mount('#app');
+const { createApp, ref } = Vue;
+
+createApp({}).mount('#app');

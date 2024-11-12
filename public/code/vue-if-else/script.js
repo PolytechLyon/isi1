@@ -1,6 +1,7 @@
-Vue.createApp({
+const { createApp, ref } = Vue;
+createApp({
     setup() {
-        const show = Vue.ref(true);
+        const show = ref(true);
         return { show };
     }
 })

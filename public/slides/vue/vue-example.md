@@ -28,10 +28,11 @@
 <div class="fragment fade-in-then-out" data-fragment-index="1">
 
 ```javascript
-const app = Vue.createApp({
+const { createApp, ref } = Vue;
+const app = createApp({
   setup() {
-    const positions = Vue.ref([]);
-    function pop({x, y}) {
+    const positions = ref([]);
+    function pop({ x, y }) {
       positions.value.push({ left: `${x}px`, top: `${y}px` });
     }
     document.addEventListener('click', pop);

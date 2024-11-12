@@ -46,9 +46,10 @@ const AppButton = {
 * Une application Vue est un composant racine.
 
 ``` [9]
-Vue.createApp({
+const { createApp, ref } = Vue;
+createApp({
   setup() {
-    const positions = Vue.ref([]);
+    const positions = ref([]);
     document.addEventListener('click', ({x, y}) =>
       positions.value.push({ left: `${x}px`, top: `${y}px` }));
     return { positions };
