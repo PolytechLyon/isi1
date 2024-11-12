@@ -1,5 +1,5 @@
 #### Vue.js
-### Composants Vue
+### Les composants
 
 <div class="r-stack">
 
@@ -7,7 +7,7 @@
 
 * L'interface utilisateur (page Web) est décomposée de plusieurs composants.
 * Un composant est un élément isolé et réutilisable de la page Web.
-* Les composants sont dans une structure arborescente, avec un composant racine.
+* Les composants sont organisés dans une structure arborescente, avec un composant racine.
 
 </div>
 
@@ -21,31 +21,39 @@
 
 </div>
 
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="2">
 
-* En plus des propriétés `props` la fonction `setup()` expose d'autres values dans le gabarit pas son objet de retour. 
+* Accessibles depuis le gabarit sont :
+  * Les propriétés `props` de composant
+  * Les éléments de l'objet de retour de `setup()`
 
 ```
 const AppButton = {
-    template: '<button :style="position" @click.stop="remove">X</button>',
-    props: ['position'],                    // lié au style
-    setup() {
-        return {
-            remove: e => e.target.remove()  // déclenché par click
-        };
-    }
+  template: '<button :style="position" @click.stop="remove">X</button>',
+  props: ['position'],                    // lié au style
+  setup() {
+    return {
+      remove: e => e.target.remove()      // déclenché par click
+    };
+  }
 }
 ```
 
 
 </div>
 
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in" data-fragment-index="3">
+<div class="fragment fade-out" data-fragment-index="5">
 
-* Le composant est déclaré auprès de l'application.
-* Une application Vue est un composant racine.
+* Le composant est enregistré auprès de l'application, ou les composants qui l'utilisent.
+* Une application Vue est le composant racine. <!-- .element class="fragment" data-fragment-index="4"  -->
 
-``` [9]
+<pre><code
+  class="javascript language-javascript"
+  data-trim
+  data-noescape
+  data-line-numbers="10|2-9"
+  data-fragment-index="4">
 const { createApp, ref } = Vue;
 createApp({
   setup() {
@@ -57,13 +65,14 @@ createApp({
 })
 .component('app-button', AppButton)
 .mount('#app');
-```
+</code></pre>
 
 </div>
+</div>
 
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="5">
 
-* Une fois déclaré, le composant peut être utilisé dans les gabarits d'autres composants.
+* Une fois enregistré, le composant peut être utilisé dans les gabarits d'autres composants.
   * Les propriétés sont passés par liaison (binding)
 
 ``` [2]
