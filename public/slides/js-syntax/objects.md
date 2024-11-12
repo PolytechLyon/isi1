@@ -30,11 +30,14 @@ const person = {
 
 <div class="fragment fade-in-then-out" data-fragment-index="2">
 
-* Une syntaxe concise pour déclarer une méthode
+* Syntaxe concise pour déclarer une propriété
+  * Si clé égale l'identifiant d'une variable locale.
+* Syntaxe concise pour déclarer une méthode.
 
-```javascript [3-5]
+```javascript [3-4]
+const name = 'John'
 const person = {
-    name: 'John',
+    name,
     greet() {
         console.log(`Hi, this is ${this.name}`);
     }
@@ -43,7 +46,7 @@ const person = {
 
 </div>
 
-<div class="fragment fade-in-then-out" >
+<div class="fragment fade-in-then-out" data-fragment-index="3">
 
 * Les clés (noms des membres) peuvent être dynamiques : syntaxe entre crochets `[]`
 
@@ -61,7 +64,7 @@ const person = {
 
 </div>
 
-<div class="fragment" >
+<div class="fragment fade-in-then-out" data-fragment-index="4">
 
 * Accès aux members avec un point : nom static
 * Ou avec crochets : nom dynamique
@@ -78,6 +81,34 @@ console.log(person['name']);    // John
 person.greet()                  // Hi, this is John
 person['greet']()               // Hi, this is John
 ```
+
+</div>
+
+<div class="fragment" data-fragment-index="5">
+
+* Décomposition d'objet
+
+⚠️ Les méthodes ne seront plus attachées à l'objet <!-- .element class="fragment" data-fragment-index="6" -->
+
+<pre><code
+  class="javascript language-javascript"
+  data-trim
+  data-noescape
+  data-line-numbers="|11"
+  data-fragment-index="6">
+const person = {
+  firstname: 'John',
+  lastname: 'Smith',
+  greet() {
+    console.log(`Hi, this is ${this.firstname}`);
+  },
+}
+const { firstname, lastname: surname, f, g } = person;
+console.log(firstname);         // John
+console.log(surname);           // Smith
+greet();                        // Hi, this is undefined
+person.greet()                  // Hi, this is John
+</code></pre>
 
 </div>
 

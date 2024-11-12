@@ -8,7 +8,7 @@
     class="javascript language-javascript"
     data-trim
     data-noescape
-    data-line-numbers="[|1, 6, 11, 15, 20]"
+    data-line-numbers="|1, 6, 11, 15"
     data-fragment-index="1">
 const body = document.querySelector('body');
 document.addEventListener('click', pop);
