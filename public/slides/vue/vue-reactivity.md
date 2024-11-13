@@ -57,31 +57,84 @@ createApp({
 
 * La fonction `ref()` envoie une référence réactive :
   * Sa valeur (champ `value`) est traqué.
-  * Chaque changement déclenche une mise à jour de la page si nécessaire. 
-* La réactivité de références d'objets est profonde.
-  * La valeur devient un proxy à l'objet original.
+  * Chaque changement déclenche une mise à jour de la page si nécessaire.
+  * Pas besoin de déréférencement dans le gabarit.
 
 </div> <!-- .fragment -->
 
-<div class="fragment fade-in-then-out" data-fragment-index="3">
+<div class="fragment fade-in-then-out">
 
 Réactivité profonde
 
 ```javascript
 createApp({
-    template: '{{ a.twice() }}',
-    setup() {
-        const a = ref({
-            b: { counter: 0 },
-            twice() { return 2 * this.b.counter; },
-        });
-        setInterval(() => a.value.b.counter++, 500);
-        return { a }
-    }
+  template: '{{ a.twice() }}',
+  setup() {
+    const a = ref({
+      b: { counter: 0 },
+      twice() { return 2 * this.b.counter; },
+    });
+    setInterval(() => a.value.b.counter++, 500);
+    return { a }
+  }
 }).mount('#app');
 ```
 
 <div data-code-example="vue-deep-reactivity" data-code-example-size="small"></div>
+
+</div> <!-- .fragment -->
+
+<div class="fragment fade-in-then-out">
+
+* La réactivité des références d'objets est profonde.
+  * La valeur est un proxy à l'objet original.
+  * Fonction `toRaw()` pour déproxifier.
+* La fonction `computed()` envoie une référence à une valeur dérivée à partir des autres références.
+
+</div> <!-- .fragment -->
+
+
+<div class="fragment fade-in-then-out">
+
+Réactivité par proxy, le problème
+
+```javascript [7, 8]
+const { createApp, ref, computed } = Vue;
+createApp({
+  template: '{{ compare }}',
+  setup() {
+    const obj = {};
+    const objRef = ref(obj);
+    const compare = computed(() =>
+            objRef.value === obj);
+    return { compare };
+  },
+}).mount('#app');
+```
+
+<div data-code-example="vue-proxy-problem" data-code-example-size="small"></div>
+
+</div> <!-- .fragment -->
+
+<div class="fragment fade-in">
+
+Réactivité par proxy, la solution
+
+```javascript [8]
+const { createApp, ref, computed, toRaw } = Vue;
+createApp({
+  template: '{{ compare }}',
+  setup() {
+    const obj = {};
+    const objRef = ref(obj);
+    const compare = computed(() =>
+            toRaw(objRef.value) === obj);
+    return { compare };
+  },
+}).mount('#app');
+```
+
+<div data-code-example="vue-proxy-solution" data-code-example-size="small"></div>
 
 </div> <!-- .fragment -->
 
