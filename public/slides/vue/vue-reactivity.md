@@ -1,6 +1,10 @@
 #### Vue.js
 ### Réactivité
 
+<div class="r-stack">
+
+<div class="fragment fade-out" data-fragment-index="2">
+
 <div style="display: flex; justify-content: space-between">
 
 <div>
@@ -24,7 +28,7 @@ createApp({
 
 </div>
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="1">
 
 * La solution
 
@@ -46,3 +50,39 @@ createApp({
 </div> 
 
 </div> 
+
+</div> <!-- .fragment -->
+
+<div class="fragment fade-in-then-out" data-fragment-index="2">
+
+* La fonction `ref()` envoie une référence réactive :
+  * Sa valeur (champ `value`) est traqué.
+  * Chaque changement déclenche une mise à jour de la page si nécessaire. 
+* La réactivité de références d'objets est profonde.
+  * La valeur devient un proxy à l'objet original.
+
+</div> <!-- .fragment -->
+
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+
+Réactivité profonde
+
+```javascript
+createApp({
+    template: '{{ a.twice() }}',
+    setup() {
+        const a = ref({
+            b: { counter: 0 },
+            twice() { return 2 * this.b.counter; },
+        });
+        setInterval(() => a.value.b.counter++, 500);
+        return { a }
+    }
+}).mount('#app');
+```
+
+<div data-code-example="vue-deep-reactivity" data-code-example-size="small"></div>
+
+</div> <!-- .fragment -->
+
+</div> <!-- .r-stach -->

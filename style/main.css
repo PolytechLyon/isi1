@@ -77,3 +77,23 @@
         }
     }
 }
+
+.reveal section [data-code-example].small {
+    iframe {
+        height: 60px;
+        width: 125px;
+    }
+
+    .icons {
+        img {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.reveal section [data-code-example].big {
+    iframe {
+        height: 400px;
+        width: 600px;
+    }
+}

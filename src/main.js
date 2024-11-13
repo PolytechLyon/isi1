@@ -3,9 +3,9 @@ import RevealMarkdown from 'reveal.js/plugin/markdown/markdown';
 import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
 import RevealNotes from 'reveal.js/plugin/notes/notes';
 
-function createCodeIcons(example, height, width) {
+function createCodeIcons(example) {
     return `
-        <iframe style="height: ${height}px; width: ${width}px" src="code/${example}/index.html"></iframe>
+        <iframe src="code/${example}/index.html"></iframe>
         <div class="icons">
             <a
                 href='https://github.com/PolytechLyon/isi1/tree/master/public/code/${example}'
@@ -40,9 +40,8 @@ Reveal.initialize({
         const example = codeExampleElement.getAttribute('data-code-example');
         if (!example) return;
         const size = codeExampleElement.getAttribute('data-code-example-size');
-        const height = size === 'big' ? 400 : 100;
-        const width = size === 'big' ? 600 : 200;
-        codeExampleElement.innerHTML += createCodeIcons(example, height, width);
+        codeExampleElement.innerHTML += createCodeIcons(example);
+        size && codeExampleElement.classList.add(size);
     });
 
     document.querySelectorAll('.reveal section pre code').forEach(codeSnippetElement => {
