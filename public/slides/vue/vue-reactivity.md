@@ -116,7 +116,7 @@ createApp({
 
 </div> <!-- .fragment -->
 
-<div class="fragment fade-in">
+<div class="fragment fade-in-then-out">
 
 Réactivité par proxy, la solution
 
@@ -137,5 +137,26 @@ createApp({
 <div data-code-example="vue-proxy-solution" data-code-example-size="small"></div>
 
 </div> <!-- .fragment -->
+
+<div class="fragment fade-in">
+
+Références aux éléments de gabarit
+
+```javascript
+const { createApp, ref } = Vue;
+createApp({
+  template: '<form ref="formRef"><input @click="reset()"/></form>',
+  setup() {
+    const formRef = ref(null);  // Réf sera peuplé lors du montage
+    const reset = () => formRef.value?.reset();
+    return { formRef, reset };
+  },
+}).mount('#app');
+```
+
+<div data-code-example="vue-template-refs" data-code-example-size="small"></div>
+
+</div> <!-- .fragment -->
+
 
 </div> <!-- .r-stach -->
