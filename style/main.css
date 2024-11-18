@@ -27,13 +27,22 @@
     min-width: 20em;
     position: relative;
 
-    img.icon {
+    .icons {
         position: absolute;
+        display: flex;
+        flex-flow: column;
+        line-height: 0;
         top: 0;
         right: 8px;
-        margin: 8px;
-        width: 15px;
-        cursor: pointer;
+
+        img {
+            width: 15px;
+            margin: 8px;
+        }
+
+        a {
+            cursor: pointer;
+        }
     }
 }
 
@@ -96,4 +105,8 @@
         height: 400px;
         width: 600px;
     }
+}
+
+.reveal section [data-external-example] {
+    display: none;
 }

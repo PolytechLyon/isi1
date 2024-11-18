@@ -3,8 +3,12 @@ import RevealMarkdown from 'reveal.js/plugin/markdown/markdown';
 import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
 import RevealNotes from 'reveal.js/plugin/notes/notes';
 
-function createCodeIcons(example) {
-    return `
+function createDemoFrame(element) {
+    const example = element.getAttribute('data-code-example');
+    if (!example) return;
+    const size = element.getAttribute('data-code-example-size');
+    size && element.classList.add(size);
+    element.innerHTML += `
         <iframe src="code/${example}/index.html"></iframe>
         <div class="icons">
             <a
@@ -17,18 +21,30 @@ function createCodeIcons(example) {
                 href='code/${example}/index.html'
                 class="icon"
                 target="_blank">
-                    <img src="images/view.svg" alt="Afficher"/>
+                    <img src="images/preview.svg" alt="Afficher"/>
             </a>
         </div>
     `;
 }
 
-function createCopyIcon() {
-    return `<img
-                src="images/copy.svg"
-                alt="copier"
-                class="icon"
-                onclick="navigator.clipboard.writeText(event.target.parentElement.innerText).then()"/>`;
+function createCodeIcons(element) {
+    const externalExample = element
+        .parentElement
+        .previousElementSibling?.getAttribute('data-external-example');
+    const externalLink = externalExample ? `<a
+                href='${externalExample}'
+                target="_blank">
+                <img
+                    src="images/view.svg"
+                    alt="Exemple extèrne" />
+          </a>` : '';
+    element.innerHTML += `<div class="icons">
+            <a
+                onclick="navigator.clipboard.writeText(event.target.closest('code')?.innerText)">
+                <img src="images/copy.svg" alt="Copier" />
+            </a>
+            ${externalLink}
+        </div>`;
 }
 
 Reveal.initialize({
@@ -36,17 +52,7 @@ Reveal.initialize({
     plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
     navigationMode: 'linear',
 }).then(() => {
-    document.querySelectorAll('.reveal section [data-code-example]').forEach(codeExampleElement => {
-        const example = codeExampleElement.getAttribute('data-code-example');
-        if (!example) return;
-        const size = codeExampleElement.getAttribute('data-code-example-size');
-        codeExampleElement.innerHTML += createCodeIcons(example);
-        size && codeExampleElement.classList.add(size);
-    });
-
-    document.querySelectorAll('.reveal section pre code').forEach(codeSnippetElement => {
-        codeSnippetElement.innerHTML += createCopyIcon();
-    });
-
+    document.querySelectorAll('.reveal section [data-code-example]').forEach(createDemoFrame);
+    document.querySelectorAll('.reveal section pre code').forEach(createCodeIcons);
     Reveal.sync();
 });
