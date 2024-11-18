@@ -8,7 +8,7 @@ website/
 </code></pre>
 <div class="r-stack">
     <pre class="fragment fade-in-then-out" data-fragment-index="1">
-        <code data-trim data-noescape data-line-numbers="6,10">
+        <code data-trim data-noescape data-line-numbers>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fr"&gt;
  &lt;head&gt;

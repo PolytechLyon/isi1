@@ -13,7 +13,7 @@
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="1">
 
-* Chaque membre est une paire clé-valeur, séparée par des deux-points
+* Chaque membre est déclaré comme une paire clé-valeur, séparée par des deux-points
 * Les membres sont séparés par virgules
 
 ```javascript
@@ -31,8 +31,8 @@ const person = {
 <div class="fragment fade-in-then-out" data-fragment-index="2">
 
 * Syntaxe concise pour déclarer une propriété
-  * Si clé égale l'identifiant d'une variable locale.
-* Syntaxe concise pour déclarer une méthode.
+  * Si clé égale l'identifiant d'une variable locale
+* Syntaxe concise pour déclarer une méthode
 
 ```javascript [3-4]
 const name = 'John'
@@ -87,8 +87,7 @@ person['greet']()               // Hi, this is John
 <div class="fragment" data-fragment-index="5">
 
 * Décomposition d'objet
-
-⚠️ Les méthodes ne seront plus attachées à l'objet <!-- .element class="fragment" data-fragment-index="6" -->
+* ⚠️ Les méthodes ne seront plus attachées à l'objet <!-- .element class="fragment" data-fragment-index="6" -->
 
 <pre><code
   class="javascript language-javascript"
@@ -103,7 +102,7 @@ const person = {
     console.log(`Hi, this is ${this.firstname}`);
   },
 }
-const { firstname, lastname: surname, f, g } = person;
+const { firstname, lastname: surname, greet } = person;
 console.log(firstname);         // John
 console.log(surname);           // Smith
 greet();                        // Hi, this is undefined

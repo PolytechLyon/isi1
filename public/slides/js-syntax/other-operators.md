@@ -66,7 +66,7 @@ const nameUndefined = undefined;
 console.log(nameNull);                          // null
 console.log(nameUndefined);                     // undefined
 console.log(nameNull ?? nameDefault);           // John
-console.log(nameUndefined ?? nameDefault)       // undefined
+console.log(nameUndefined ?? nameDefault)       // John
 ```
 
 </div>
