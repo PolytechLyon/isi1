@@ -2,6 +2,8 @@
 ### Manipulation
 
 
+<div data-external-example="code/dom-simple-example/index.html"></div>
+
 ```html fix
 <!DOCTYPE html>
 <html lang="en">

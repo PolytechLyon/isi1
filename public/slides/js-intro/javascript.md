@@ -1,5 +1,7 @@
-## **JavaScript**
-* Langage haut niveau
+### JavaScript
+## **Le langage**
+
+* Haut niveau
 * Interprété
 * Typage faible et dynamique
 * Orienté-objet

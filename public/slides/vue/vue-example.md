@@ -4,7 +4,7 @@
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
 
-* Configuration HTML directe, sans outil de build
+* Utilisation sans outil de compilation (type `npm`)
   * Pour une application très simple 
 
 ```css fix

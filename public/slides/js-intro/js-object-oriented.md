@@ -1,7 +1,8 @@
 #### Javascript
 ### Langage orienté objet
 * Support de POO basé sur les **prototypes**
-* On peut créer des objets, sans devoir définir des classes
+* On peut créer des objets sans classes
+* Permet la programmation procédurale (non pur)
 
 ```javascript
 const rectangle = {
