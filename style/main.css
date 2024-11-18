@@ -111,3 +111,9 @@
 .reveal section [data-external-example] {
     display: none;
 }
+
+.reveal-print .reveal section {
+    .icons {
+        display: none;
+    }
+}
