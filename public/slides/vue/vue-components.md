@@ -16,8 +16,8 @@
 * Un composant Vue peut avoir :
   * Un gabarit (propriété `template`)
   * Une logique (méthode `setup()`)
-  * Un ensemble des attributs qui peuvent lui être affectées (propriété `props`)
-  * Un ensemble des événements qu'il peut émettre (propriété `emits`)
+  * Un ensemble d'attributs (propriété `props`)
+  * Un ensemble d'événements (propriété `emits`)
 
 </div>
 
@@ -73,7 +73,7 @@ createApp({
 <div class="fragment fade-in-then-out" data-fragment-index="5">
 
 * Une fois enregistré, le composant peut être utilisé dans les gabarits d'autres composants.
-  * Les propriétés sont passés par liaison (binding)
+* Les attributs sont passés ainsi `:nom="valeur"`
 
 ``` [2]
   <div id="app">
