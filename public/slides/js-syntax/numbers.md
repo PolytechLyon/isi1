@@ -8,23 +8,23 @@
 * Les chiffres en JavaScript sont des réels (flottant) sur 8 octets (double précision)
 * Chiffres spéciaux : `Infinity`, `NaN`
 ```javascript
-1 / 0 === Infinity;     // true
-0 / 0;                  // NaN
-0 / 0 === NaN;          // false
-NaN !== NaN             // true
-isNaN(0 / 0);           // true
+console.log(1 / 0 === Infinity);     // true
+console.log(0 / 0);                  // NaN
+console.log(0 / 0 === NaN);          // false
+console.log(NaN !== NaN);            // true
+console.log(isNaN(0 / 0));           // true
 ```
 
 </div>
 
 <div class="fragment fade-in-then-out" data-fragment-index="1">
 
-* Le type BigInt peut être utilisé pour les grands entiers
+* Le type BigInt est utilisé pour les grands entiers
 
 ```javascript fix
 const x = BigInt(Number.MAX_SAFE_INTEGER) + 1n;
-x;                  // 9007199254740992n
-typeof x;           // bigint
+console.log(x);                  // 9007199254740992n
+console.log(typeof x);           // bigint
 ```
 
 </div>

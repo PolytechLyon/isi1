@@ -9,13 +9,14 @@
 * Opérateurs logiques : `&&`, `||`, `!`
 * Affectation `&&=`, `!!=`
 ```javascript
-typeof true;        // boolean
-typeof false;       // boolean
-!true;              // false
+console.log(typeof true);           // boolean
+console.log(typeof false);          // boolean
+console.log(!true);                 // false
 let b = false;
 b ||= (typeof 42 === 'number');
+console.log(b);                     // true
 const str = 'Hi';
-str !== '' && console.log(str);
+str !== '' && console.log(str);     // Hi
 ```
 
 </div>
@@ -28,9 +29,7 @@ str !== '' && console.log(str);
 
 ```javascript
 const str = 'Hi';
-if (str) {
-    console.log(str);
-}
+str && console.log(str);
 ```
 </div>
 

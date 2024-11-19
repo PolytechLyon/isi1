@@ -9,10 +9,10 @@
 ```javascript
 const hi = "Hi";
 const hello = 'Hello';
-hi;                         // Hi
-hello;                      // Hello
-typeof hi;                  // string
-typeof hello;               // string
+console.log(hi);                         // Hi
+console.log(hello);                      // Hello
+console.log(typeof hi);                  // string
+console.log(typeof hello);               // string
 ```
 
 </div>
@@ -20,13 +20,14 @@ typeof hello;               // string
 <div class="fragment fade-in-then-out" data-fragment-index="1">
 
 * Une valeur de type `string` peut être créée en utilisant l'accent grave
-* Cela permet que la chaîne de caractère s'étale sur plusieurs lignes
-* De plus, la même chaîne caractère fait office d'un *gabarit*, qui peut contenir d'autre expression
+* Cette valeur fait office d'un *gabarit*, qui peut contenir d'autre expression
+* Un gabarit peut s'étaler sur plusieurs lignes
 
 ```javascript [2-3]
 const name = 'John';
 const greeting = `Hello ${name},
 Have a nice day.`;
+console.log(greeting);
 ```
 
 </div>
@@ -38,10 +39,10 @@ Have a nice day.`;
 
 ```javascript
 const str = 'Hello World';
-str + '!';                  // Hello Word!
-str.length;                 // 11
-str[4];                     // o
-str.split(' ')              // ['Hello', 'World']
+console.log(str + '!');             // Hello Word!
+console.log(str.length);            // 11
+console.log(str[4]);                // o
+console.log(str.split(' '));        // ['Hello', 'World']
 ```
 
 </div>

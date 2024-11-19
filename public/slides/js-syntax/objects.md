@@ -15,6 +15,7 @@
 
 * Chaque membre est déclaré comme une paire clé-valeur, séparée par des deux-points
 * Les membres sont séparés par virgules
+* Le tout entouré par des accolades 
 
 ```javascript
 const person = {
@@ -87,7 +88,7 @@ person['greet']()               // Hi, this is John
 <div class="fragment" data-fragment-index="5">
 
 * Décomposition d'objet
-* ⚠️ Les méthodes ne seront plus attachées à l'objet <!-- .element class="fragment" data-fragment-index="6" -->
+* Les méthodes ne seront plus attachées à l'objet <!-- .element class="fragment" data-fragment-index="6" -->
 
 <pre><code
   class="javascript language-javascript"

@@ -9,7 +9,7 @@
 
 ```javascript
 function f() {
-    colsole.log('Hello world');
+    console.log('Hello world');
 }
 
 f();                        // on appel la fonction
@@ -22,7 +22,7 @@ f();                        // on appel la fonction
 
 ```javascript
 function f(a, b) {
-    colsole.log(a + b);
+    console.log(a + b);
 }
 
 f(1, 2);                    // appel avec paramètres
