@@ -40,7 +40,7 @@ function createCodeIcons(element) {
           </a>` : '';
     element.innerHTML += `<div class="icons">
             <a
-                onclick="navigator.clipboard.writeText(event.target.closest('code')?.innerText)">
+                onclick="navigator.clipboard.writeText(event.target.closest('code')?.innerText?.trim())">
                 <img src="images/copy.svg" alt="Copier" />
             </a>
             ${externalLink}
