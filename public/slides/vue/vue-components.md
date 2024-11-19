@@ -27,15 +27,14 @@
   * Les propriétés `props` de composant
   * Les éléments de l'objet de retour de `setup()`
 
-```
+```javascript
 const AppButton = {
-  template: '<button :style="position" @click.stop="remove">X</button>',
-  props: ['position'],                    // lié au style
-  setup() {
-    return {
-      remove: e => e.target.remove()      // déclenché par click
-    };
-  }
+    template: `<button :style="position" @click.stop="remove">X</button>`,
+    props: ['position'],
+    emits: ['remove'],
+    setup: (props, ctx) => ({
+        remove: () => ctx.emit('remove', props.position),
+    }),
 }
 ```
 
@@ -45,23 +44,36 @@ const AppButton = {
 <div class="fragment fade-in" data-fragment-index="3">
 <div class="fragment fade-out" data-fragment-index="5">
 
-* Le composant est enregistré auprès de l'application, ou les composants qui l'utilisent.
+<div class="r-stack">
+<div>
+
+* Le composant est enregistré auprès de l'application, ou les composants qui l'utilisent. <!-- .element class="fragment fade-out" data-fragment-index="4"  -->
+
+</div>
+<div>
+
 * Une application Vue est le composant racine. <!-- .element class="fragment" data-fragment-index="4"  -->
+
+</div>
+</div>
 
 <pre><code
   class="javascript language-javascript"
   data-trim
   data-noescape
-  data-line-numbers="10|2-9"
+  data-line-numbers="13|1-12"
   data-fragment-index="4">
-const { createApp, ref } = Vue;
 createApp({
-  setup() {
-    const positions = ref([]);
-    document.addEventListener('click', ({x, y}) =>
-      positions.value.push({ left: `${x}px`, top: `${y}px` }));
-    return { positions };
-  }
+    setup() {
+        const positions = ref([]);
+        const drop = ({ left, top }) => {
+            const notSame = p => p.left !== left || p.top !== top;
+            positions.value = positions.value?.filter(notSame);
+        }
+        document.addEventListener('click', ({x, y}) =>
+            positions.value.push({ left: `${x}px`, top: `${y}px` }));
+        return { positions, drop };
+    }
 })
 .component('app-button', AppButton)
 .mount('#app');
@@ -73,11 +85,15 @@ createApp({
 <div class="fragment fade-in-then-out" data-fragment-index="5">
 
 * Une fois enregistré, le composant peut être utilisé dans les gabarits d'autres composants.
-  * Les propriétés sont passés par liaison (binding)
+* Pour passer les attributs : `:nom="valeur"`
+* Pour écouter les événements : `@nom="fonction"` 
 
-``` [2]
+``` [2-5]
   <div id="app">
-    <app-button v-for="position in positions" :position="position" />
+    <app-button
+            v-for="position in positions"
+            :position="position"
+            @remove="drop" />
   </div>
 ```
 
