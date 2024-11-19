@@ -13,11 +13,11 @@
 
 <div class="fragment fade-in-then-out" data-fragment-index="1">
 
-* Un composant Vue peut avoir les caractéristiques suivantes :
-  * Un gabarit (attribut `template`)
+* Un composant Vue peut avoir :
+  * Un gabarit (propriété `template`)
   * Une logique (méthode `setup()`)
-  * Un ensemble des propriétés qui peuvent être affectées (attribut `props`)
-  * Un ensemble des événements qui peuvent être émis (attribut `emits`)
+  * Un ensemble des attributs qui peuvent lui être affectées (propriété `props`)
+  * Un ensemble des événements qu'il peut émettre (propriété `emits`)
 
 </div>
 
