@@ -84,11 +84,37 @@ createApp({
 
 </div>
 
-<div class="fragment fade-in">
+<div class="fragment fade-in-then-out" data-fragment-index="6">
 
 Résultat
 
 <div data-code-example="vue-component" data-code-example-size="big"></div>
+
+
+</div>
+
+<div class="fragment fade-in-then-out" data-fragment-index="7">
+
+* Crochet de cycle de vie de composant
+
+```javascript [6,7]
+setup() {
+  const positions = ref([]);
+  function pop({ x, y }) {
+    positions.value.push({ left: `${x}px`, top: `${y}px` });
+  }
+  onMounted(() => document.addEventListener('click', pop));
+  onUnmounted(() => document.removeEventListener('click', pop));
+  return { positions };
+}
+```
+</div>
+
+<div class="fragment fade-in-then-out" data-fragment-index="8">
+
+Résultat
+
+<div data-code-example="vue-lifecycle-hooks" data-code-example-size="big"></div>
 
 
 </div>
