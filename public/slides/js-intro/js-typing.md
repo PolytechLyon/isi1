@@ -1,7 +1,7 @@
 #### Javascript
 ### Typage dynamique
 * Typage faible, aucune déclaration de type
-* Et dynamique, peut varier au cours de l'exécution
+* Le type peut varier au cours de l'exécution
 
 ```javascript
 let x = 1;

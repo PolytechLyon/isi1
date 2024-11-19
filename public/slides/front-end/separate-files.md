@@ -4,7 +4,7 @@
 website/
     index.html
     style.css
-    app.js
+    script.js
 </code></pre>
 <div class="r-stack">
     <pre class="fragment fade-in-then-out" data-fragment-index="1">
@@ -18,7 +18,7 @@ website/
  &lt;/head&gt;
  &lt;body&gt;
   &lt;h1&gt;Une page &lt;span id="adjective"&gt;...&lt;/span&gt;&lt;/h1&gt;
-  &lt;script src="./app.js"&gt;&lt;/script&gt;
+  &lt;script src="./script.js"&gt;&lt;/script&gt;
  &lt;/body&gt;
 &lt;/html&gt;
         </code>

@@ -1,6 +1,6 @@
 #### Javascript
 ### Langage Haut Niveau
-* Abstraction des caractéristiques techniques
+* Abstraction des spécificités techniques
 * Proche des langues naturelles (anglais)
 * Syntaxe familière (Java, C)
 
