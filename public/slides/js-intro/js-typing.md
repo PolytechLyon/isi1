@@ -10,9 +10,6 @@ x = 'one';
 console.log(typeof x);  // string
 x = [1, 2, 3];
 console.log(typeof x);  // object
-x = {a: 1, b: 2, c: 3};
+x = { a: 1, b: 2, c: 3 };
 console.log(typeof x);  // object
 ```
-
-
-
