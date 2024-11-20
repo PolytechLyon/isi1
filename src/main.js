@@ -8,8 +8,12 @@ function createDemoFrame(element) {
     if (!example) return;
     const size = element.getAttribute('data-code-example-size');
     size && element.classList.add(size);
+    const demoLink = `code/${example}/index.html`;
+    const frame = element.closest('.reveal-print') ?
+        `<div class="frame"><a href="${demoLink}">Voir dans le navigateur</a></div>` :
+        `<iframe class="frame" src="${demoLink}"></iframe>`;
     element.innerHTML += `
-        <iframe src="code/${example}/index.html"></iframe>
+        ${frame}
         <div class="icons">
             <a
                 href='https://github.com/PolytechLyon/isi1/tree/master/public/code/${example}'
@@ -18,7 +22,7 @@ function createDemoFrame(element) {
                     <img src="images/github.svg" alt="GitHub"/>
                 </a>
             <a
-                href='code/${example}/index.html'
+                href='${demoLink}'
                 class="icon"
                 target="_blank">
                     <img src="images/preview.svg" alt="Afficher"/>
@@ -40,7 +44,8 @@ function createCodeIcons(element) {
           </a>` : '';
     element.innerHTML += `<div class="icons">
             <a
-                onclick="navigator.clipboard.writeText(event.target.closest('code')?.innerText?.trim())">
+                onclick="navigator.clipboard.writeText(event.target.closest('code')?.innerText?.trim())" 
+                class="no-print">
                 <img src="images/copy.svg" alt="Copier" />
             </a>
             ${externalLink}

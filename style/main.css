@@ -89,7 +89,7 @@
 }
 
 .reveal section [data-code-example].small {
-    iframe {
+    .frame {
         height: 60px;
         width: 125px;
     }
@@ -102,9 +102,20 @@
 }
 
 .reveal section [data-code-example].big {
-    iframe {
+    .frame {
         height: 400px;
         width: 600px;
+    }
+}
+
+.reveal section [data-code-example] div.frame {
+    background-color: linen;
+    min-height: 60px;
+    min-width: 250px;
+    a {
+        margin-left: 40px;
+        margin-right: 40px;
+        font-size: 40%;
     }
 }
 
@@ -113,7 +124,7 @@
 }
 
 .reveal-print .reveal section {
-    .icons {
+    .no-print {
         display: none;
     }
 }
