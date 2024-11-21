@@ -58,7 +58,7 @@ const { createApp, ref } = Vue;
 createApp({
   setup() {
     const positions = ref([]);
-    document.addEventListener('click', ({x, y}) =>
+    document.addEventListener('click', ({ x, y }) =>
       positions.value.push({ left: `${x}px`, top: `${y}px` }));
     return { positions };
   }

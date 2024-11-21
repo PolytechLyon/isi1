@@ -146,7 +146,7 @@ button { position: absolute }
   import { ref } from 'vue'
   import AppButton from './AppButton.vue';
   const positions = ref([]);
-  document.addEventListener('click', ({x, y}) =>
+  document.addEventListener('click', ({ x, y }) =>
           positions.value.push({ left: `${x}px`, top: `${y}px` }));
 </script>
 

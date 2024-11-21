@@ -2,7 +2,7 @@ const { createApp, ref, computed, onMounted, onUnmounted } = Vue;
 
 /**
  * Store mouse clicks in a reactive array.
- * @returns {{coordinates: {x: number, y: number}}}
+ * @returns {{coordinates: { x: number, y: number }}}
  */
 function useClickCoordinates() {
     const coordinates = ref([]);

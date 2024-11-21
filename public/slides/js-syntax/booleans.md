@@ -7,7 +7,7 @@
 
 * Deux valeurs possibles : `true` et `false`
 * Opérateurs logiques : `&&`, `||`, `!`
-* Affectation `&&=`, `!!=`
+* Affectation `&&=`, `||=`
 ```javascript
 console.log(typeof true);           // boolean
 console.log(typeof false);          // boolean

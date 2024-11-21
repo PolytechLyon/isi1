@@ -79,8 +79,8 @@ const person = {
 }
 console.log(person.name);       // John
 console.log(person['name']);    // John
-person.greet()                  // Hi, this is John
-person['greet']()               // Hi, this is John
+person.greet();                 // Hi, this is John
+person['greet']();              // Hi, this is John
 ```
 
 </div>
@@ -107,7 +107,7 @@ const { firstname, lastname: surname, greet } = person;
 console.log(firstname);         // John
 console.log(surname);           // Smith
 greet();                        // Hi, this is undefined
-person.greet()                  // Hi, this is John
+person.greet();                 // Hi, this is John
 </code></pre>
 
 </div>

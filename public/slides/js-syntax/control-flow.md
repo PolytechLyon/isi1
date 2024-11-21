@@ -129,7 +129,7 @@ console.log(x);     // 45
 * `break` et `continue` dans une boucle 
 
 ```javascript
-const reservations = {a: 3, b: 0, c: 5, d: 4, e: 2, f: 1};
+const reservations = { a: 3, b: 0, c: 5, d: 4, e: 2, f: 1 };
 let available = 10;
 for (let res in reservations) {
     const places = reservations[res];
