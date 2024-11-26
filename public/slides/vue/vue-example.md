@@ -4,9 +4,6 @@
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
 
-* Utilisation sans outil de compilation (type `npm`)
-  * Pour une application très simple 
-
 ```css fix
 #app { button { position: absolute; } }
 ```
