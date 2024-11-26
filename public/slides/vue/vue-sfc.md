@@ -115,19 +115,18 @@
 
 * Déclarer les props avec `defineProps()`
 
-<div data-external-example="https://play.vuejs.org/#eNp9kk1r3DAQhv/KIAr2wtZ7aE+uN7Qpe2gpbWh7KMSFOPZ4o8SWhCQ7Xoz/e0byx+6GsDpJ845ezYyenn1RKmobZDFLTK65smDQNuoqFbxWUlvoQWMJA5Ra1hBQarBIdPe6sVaKSYw2S8R5Bp9SkUthLChpuOW0ha1zC2//r0grZN7UKGyUFcWupc0PbiwK1GGQVzx/CtYQ9t0aDsMKtlQQ+LV4RW1WNRipxjyEPVRY2hju3vXdoLq7NVip/PHgjjCs3IPJZmyRvOhgsVZVZnFyTo7dtO9Lqbcpm58CLo7Ppgzi+XCSQ+ENOSWbE1u2ZtbQBEq+jx6NFDTk3j2WslzWileof6nJMwavOC2rKvn83cesbnA9x/MHzJ/eiD+azsVSdqPRoG4xZYtmM71HO8q7Pz+xo/0i1rJoKsq+IP5GI6tm7M+lXTeioLJP8ny13zwPXOz/ml1HX2jmplyhLnPw+SkjKr5eaP1Y7ofoo7+XioGmeIbVJVQLLLnAGy2VOUPW0XaUwttg/rbAkzhSqrGWLRKiITrgAKOxnmgUwlcInQOU3I/sxMYeKjwH47PHOTLEJAmjW8qu/iWb8dJrbhLvQZvJs1/oiyG79z+CbjRUzJTIhhfUjE4f"></div>
+<div data-external-example="https://play.vuejs.org/#eNp9kkGP0zAQhf/KyEJKKhX3AKeQIljUAwjBCjggbZA2m0y63k1sy3ZCqij/nbHTpukKNSd73svzjP0N7KPWvGuRJSy1hRHagUXX6veZFI1WxsEABisYoTKqgYis0SzRvzetc0oeRb6ZKz4zepfJQknrQCsrnKAlbH1afPdnRVqpirZB6XhelruOFl+FdSjRxFFRi+I5WkM89Gs4jCvYUkMQvjmLd3ndItetfYwHqLFyCdy/GvpR9/drcEqH7cFvYVz5A9PNNCJl0cZho+vc4TE5PU/Tva6U2WbsdBQIeT42Y5CcNgsPlTeUlG4WsWzNnKUbqMSeP1kl6ZIHf1jGCtVoUaP5ro+ZCQTFa3ldq79fQs2ZFtenevGIxfN/6k+297WM3Rq0aDrM2Ky53OzRTfLu5zfsaT2LjSrbmtxXxB9oVd1O83nbTStLanvhC91+DjwIuf9ldz09oT0N5Rv1zjH4M0ZUfLoy+rndN/xt+C+TI93iBVbXUC2xEhJvjdL2AtkziUHaLo3xXXR6xChwOTkNNqpDssbo8QPkU3d8EuIXQF3ilD5MJCXWHWr0mPiT+AKWDwFxbolTkqfMjB1Z/J1upoCXRKUhjxbH/GHmMoH8IbwV+kujxoKRjf8ATaJV+Q=="></div>
 
 ```vue
 <script setup>
 import { defineProps } from 'vue';
-defineProps(['position']);
+const props = defineProps(['position']);
 const remove = (e) => e.target.remove();
 </script>
-
 <template>
-  <button :style="position" @click.stop="remove">X</button>
+  <button :style="props.position" @click.stop="remove">
+    X</button>
 </template>
-
 <style>
 button { position: absolute }
 </style>
@@ -139,7 +138,7 @@ button { position: absolute }
 
 * Les composants importés sont automatiquement enregistrés localement
 
-<div data-external-example="https://play.vuejs.org/#eNp9kk1r3DAQhv/KIAr2wtZ7aE+uN7Qpe2gpbWh7KMSFOPZ4o8SWhCQ7Xoz/e0byx+6GsDpJ845ezYyenn1RKmobZDFLTK65smDQNuoqFbxWUlvoQWMJA5Ra1hBQarBIdPe6sVaKSYw2S8R5Bp9SkUthLChpuOW0ha1zC2//r0grZN7UKGyUFcWupc0PbiwK1GGQVzx/CtYQ9t0aDsMKtlQQ+LV4RW1WNRipxjyEPVRY2hju3vXdoLq7NVip/PHgjjCs3IPJZmyRvOhgsVZVZnFyTo7dtO9Lqbcpm58CLo7Ppgzi+XCSQ+ENOSWbE1u2ZtbQBEq+jx6NFDTk3j2WslzWileof6nJMwavOC2rKvn83cesbnA9x/MHzJ/eiD+azsVSdqPRoG4xZYtmM71HO8q7Pz+xo/0i1rJoKsq+IP5GI6tm7M+lXTeioLJP8ny13zwPXOz/ml1HX2jmplyhLnPw+SkjKr5eaP1Y7ofoo7+XioGmeIbVJVQLLLnAGy2VOUPW0XaUwttg/rbAkzhSqrGWLRKiITrgAKOxnmgUwlcInQOU3I/sxMYeKjwH47PHOTLEJAmjW8qu/iWb8dJrbhLvQZvJs1/oiyG79z+CbjRUzJTIhhfUjE4f"></div>
+<div data-external-example="https://play.vuejs.org/#eNp9kkGP0zAQhf/KyEJKKhX3AKeQIljUAwjBCjggbZA2m0y63k1sy3ZCqij/nbHTpukKNSd73svzjP0N7KPWvGuRJSy1hRHagUXX6veZFI1WxsEABisYoTKqgYis0SzRvzetc0oeRb6ZKz4zepfJQknrQCsrnKAlbH1afPdnRVqpirZB6XhelruOFl+FdSjRxFFRi+I5WkM89Gs4jCvYUkMQvjmLd3ndItetfYwHqLFyCdy/GvpR9/drcEqH7cFvYVz5A9PNNCJl0cZho+vc4TE5PU/Tva6U2WbsdBQIeT42Y5CcNgsPlTeUlG4WsWzNnKUbqMSeP1kl6ZIHf1jGCtVoUaP5ro+ZCQTFa3ldq79fQs2ZFtenevGIxfN/6k+297WM3Rq0aDrM2Ky53OzRTfLu5zfsaT2LjSrbmtxXxB9oVd1O83nbTStLanvhC91+DjwIuf9ldz09oT0N5Rv1zjH4M0ZUfLoy+rndN/xt+C+TI93iBVbXUC2xEhJvjdL2AtkziUHaLo3xXXR6xChwOTkNNqpDssbo8QPkU3d8EuIXQF3ilD5MJCXWHWr0mPiT+AKWDwFxbolTkqfMjB1Z/J1upoCXRKUhjxbH/GHmMoH8IbwV+kujxoKRjf8ATaJV+Q=="></div>
 
 ```vue [3, 10]
 <script setup>
@@ -163,7 +162,7 @@ button { position: absolute }
   * Meilleure lisibilité du code
   * Gabarits compilés en avance
   * Style avec portée limitée au composant
-  * Enregistrement automatique et optimisé 
+  * Enregistrement des composants automatique et optimisé 
 * Inconvénients
   * Phase de compilation obligatoire
 

@@ -12,8 +12,7 @@
 <body>
   <div id="app">
     <button v-for="position in positions"
-      :style="position"
-      @click.stop="$event.target.remove()">X</button>
+      :style="position" @click.stop="remove">X</button>
   </div>
   <script src="https://unpkg.com/vue@3"></script>
   <script src="script.js"></script>
@@ -32,8 +31,9 @@ const app = createApp({
     function pop({ x, y }) {
       positions.value.push({ left: `${x}px`, top: `${y}px` });
     }
+    const remove = (e) => e.target.remove();
     document.addEventListener('click', pop);
-    return { positions };
+    return { positions, remove };
   }
 });
 app.mount('#app');
