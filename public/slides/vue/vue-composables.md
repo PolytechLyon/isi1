@@ -6,7 +6,7 @@
 <div class="fragment fade-out" data-fragment-index="1">
 
 * Un *composable* est une fonction qui maintient une logique à état.
-* Il permet la réutilisation la même logique dans plusieurs compsants
+* Il permet la réutilisation de la même logique dans plusieurs compsants
 * Par convention, son nom commence par `use`.
 
 </div>

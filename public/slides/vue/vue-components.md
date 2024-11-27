@@ -46,7 +46,7 @@ const AppButton = {
 <div class="fragment fade-out" data-fragment-index="5">
 
 * Le composant est enregistré auprès de l'application, ou les composants qui l'utilisent.
-* Une application Vue est le composant racine. <!-- .element class="fragment" data-fragment-index="4"  -->
+* L'application Vue est le composant racine. <!-- .element class="fragment" data-fragment-index="4"  -->
 
 <pre><code
   class="javascript language-javascript"
