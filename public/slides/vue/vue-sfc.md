@@ -44,7 +44,7 @@
     <button
         v-for="position in positions"
         :style="position"
-        @click.stop="$event.target.remove()">X</button>
+        @click.stop="remove">X</button>
   </div>
 </template>
 ```
@@ -67,23 +67,23 @@
 
 * Logique qui expose la fonction `setup`
 
-<div data-external-example="https://play.vuejs.org/#eNqNU9uK2zAQ/RUhFuKA6zy0T1ln6YU8tPRGL1CoCuu1x1ntypLQxXUI/veO5PhSWMIKP2hmzsycMx6d6Buts9YD3dLcloZrd8Mkb7QyjpyIgTolSn5SXjqowvWnbAaD9KQ2qiErTF4xySR0MamCuvACk5kkeCw4r5P1aIZTKmkd0cpyx/FKdqFN8vvP+nrG1F6WIYownZxIl5Ij6f+rEs5UI2sL4SHT3t4jWkDttuT26tT1urtNiVM6msdgYplFn36+TjITpLvDKcx9KlX6BqTLiqrat3j5yK0DCSZZlYKXj6s08FwvCy8mdaGegUa18MySBkdpJP6VeXT9OYwy8Ms30x9Ew0GjReEgds4r3p4p5HfeOYWIoWr7olZmx+hYlPAw9HMDRkfY1rqjgAVuDr2OhDOLY8b4FQQ1mSvMAUaByZrRm1/5Zug8ENoMjPLNgieasQ2xpdJQoWfIIAvRW1LcWSW8g+sgGzWHDITSlDrMkzU/ZA9WSdzouC6MlqrRXID5os+ituMiMVoIof5+iD5nPKSjv7yH8vEJ/4Ptgo/RrwYsmBYYnWKD5iG8//4ZOrxPwUZVXiD6QvAbRGFxuAH21ssKaS9wke37+Dq5PPyw+w53xo6iAtGA7COeUXyZ7y5In+m+zF7FPNwi2v8DH6RTKA=="></div>
+<div data-external-example="https://play.vuejs.org/#eNqNU9uK2zAQ/RUhCnHAdR7ap6wTeiEPLb3RCxTqwnrtcVa7siR0cR2C/70jKXa8yxJW+EEzc2Z0zsz4SN8qlXUO6JrmptJM2W0hWKuktuRINDQpkeKzdMJC7a+/RBsNMpBGy5YsMHlRiEJAH5JqaErHMbkQBI8B61SyHE1/KimMJUoaZhleycY/k/z5u7w6YxonKh9FmEqOpE/JgQwPqvgz1ci6kjvIlDO3iObQ2DW5fnHsB9Vfp8RKFcyDN7HM7J3hMS0NrewAOSWwJJstgcyWeg82i4Fknjw1JkGBG+zbmVktK9eCsFlZ17sOL5+YsSBAJ4uKs+p+kXply4fVpt5eqBdpPLOkxuZrgXOcGpWOAocTDBuAX76aZo+GhVbx0kJgkNesO1HJb5y1EhGxeveykXpT0LE4YX5cp4cKOsLWxh44zHDn0JtAPDM4IIxHZgXd/s5X8aVIYBUZ5KsZLzRDWWIqqaBGT8wgM7FrUt4YyZ2FKy8TNfoMhNKUWswTDdtnd0YK3P2wWAWtZKsYB/1VnUSsx5UraMm5/Pcx+Kx2kI7+6haq+yf8d6b3voJ+02BAe2VTLO5UDO9+fIEe71OwlbXjiL4Q/A5BWGimh71zokbaM1xg+yH8x0zsf5pdj7tiRlGeqEcOAV9Q/IffX5B+pvsqex3ycGvo8B/Pl193"></div>
 
 ```vue
 <script>
-  import { ref, onMounted, onUnmounted } from 'vue'
-
-  export default {
-    setup() {
-      const positions = ref([]);
-      function pop({ x, y }) {
-        positions.value.push({ left: `${x}px`, top: `${y}px` });
-      }
-      onMounted(() => document.addEventListener('click', pop));
-      onUnmounted(() => document.removeEventListener('click', pop));
-      return { positions };
+import { ref, onMounted, onUnmounted } from 'vue'
+export default {
+  setup() {
+    const positions = ref([]);
+    function pop({ x, y }) {
+      positions.value.push({ left: `${x}px`, top: `${y}px` });
     }
+    const remove = (e) => e.target.remove();
+    onMounted(() => document.addEventListener('click', pop));
+    onUnmounted(() => document.removeEventListener('click', pop));
+    return { positions, remove };
   }
+}
 </script>
 ```
 
@@ -92,7 +92,7 @@
 
 * Logique simplifiée avec l'attribut `setup`
 
-<div data-external-example="https://play.vuejs.org/#eNqFU9tunDAQ/ZWRFWlBouxD+0TYqBftQ6ve1ItUqa4UAsPGCdiWL5QV4t87NmGzD1HK01zOGZ8z2BN7o3U+eGQFK21thHZg0Xl9xaXotTIOJjDYZqDkJ+WlwyaEP2W/JDBDa1QPGxqx4ZLLWknrQCsrnKAQdoGd/P6TXnLZelmHKrV1MsGYwRHmFCYugb4TJx+qzmOuvb0lVIetK+D6YhpnPV5n4JSO6TGkRKe5M5cndUmSwo7EAzSq9j1Kl1dNsx8o+CisQ4km2dSdqO83WdCRhgFnhp7gG+zVgP8ZUW6X7RGVEoe97iqHcVDZiCEGFN545xQhQgIwvGiV2XG2WgcRdvOwBs5WWGHdscMz3GPrddSRW9oK9S8wiMxdZQ646k5Szq5+ldvl5EXQdlFUbs90UhqPAVsrjQ1VFgbQBVjPLaC6sarzDi+Blk6eA4OgLGOOeLIVh/zOKkm3Kf5VzmrVa9Gh+aIfTBXr/+as6jr190OsOeMxW+v1Ldb3T9Tv7BhqnH01aNEMyNmpt3he2vvvn3Gk+NTsVeM7Qj/T/IbRWFxugL31siHZZ7io9n18E0Ieftj9SFfBrqaC0ICcI54zeg/vnrH+KPdl/iry6Bqz+R/RzzUT"></div>
+<div data-external-example="https://play.vuejs.org/#eNqFU8lu2zAQ/ZUBUcAyoMqH9uTYRhf40KIbugAFygJRpJHDRCIJLooMQ/+eIRkpPgSJTrO8N/NmODqx91oXvUe2ZhtbGaEdWHRe77gUnVbGwQkMNjko+VV56bAO5h/ZJQdGaIzqYEElFlxyWSlpHWhlhRNkwjaws3//lxdcNl5WIUppnZ1gyOEI4xJOXAJ9M6foy9Zjob29JlSLjVvD5avTMOrhMgendHSPwSU61R2ntgY71SP1zHAJ2x1g4UpzQFekRBbA8xxZFjChd60q36F0RVnX+56ML8I6lGiyRdWK6naRB8XLxJ5Hf4Kf2rxQYrNKeyYqOQ473ZYOY6FNLfpokHnlnVOECA5A/7pRZsvZtCQQYYsPC+Nsgq2tO7Z4hntMvYs6Ckv7o3xSytnu72aVOiUBq6RgszrTRW4sC7ZSGmuKJAbQaUx91lBeWdV6hxdAz0EzBgZBWc4c8WQjDsWNVZLuLL43Z5XqtGjRfNcPQ6ynS+CsbFt19znGnPGYT/HqGqvbJ+I3dggxzn4YtGjCZHMunUBK7399w4HsOdmp2reEfib5E+NgcZkB9sHLmmSf4aLaT/FvEfLw2+4Heno7DRWEBuQY8ZzRn/LxmdEf5b4p3kYeHTgb7wEL0j2I"></div>
 
 ```vue
 <script setup>
@@ -102,6 +102,7 @@
   function pop({ x, y }) {
     positions.value.push({ left: `${x}px`, top: `${y}px` });
   }
+  const remove = (e) => e.target.remove();
   onMounted(() =>
           document.addEventListener('click', pop));
   onUnmounted(() =>
