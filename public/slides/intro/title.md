@@ -2,4 +2,4 @@
 https://polytechlyon.github.io/isi1
 
 #### Ahmad SHAHWAN
-ahmad@digamma.solutions
+ahmad.shahwan@univ-lyon1.fr
