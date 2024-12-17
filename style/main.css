@@ -128,3 +128,8 @@
         display: none;
     }
 }
+
+/* avoid fake bold on some browsers */
+.reveal strong {
+    font-weight: inherit;
+}
